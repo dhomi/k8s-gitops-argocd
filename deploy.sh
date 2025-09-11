@@ -1,6 +1,5 @@
 docker build -t hello-world:latest .
-
-
+kubectl apply -f k8s/deployment.yaml -n argocd
 git add .
 git commit -m "Deploy hello-world image"
 
