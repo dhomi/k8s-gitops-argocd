@@ -28,4 +28,4 @@ spec:
     app: hello-world
   ports:
   - port: 80
-    nodePort: 8080
+    nodePort: 30080
