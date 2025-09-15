@@ -6,7 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'file:///Users/adhomi/Documents/REPO/WORK/LEARN/roadmap/gitOps-argoCD/hello-world'
+    repoURL: 'https://github.com/dhomi/k8s-gitops-argocd.git'
+    # repoURL: 'file:///Users/adhomi/Documents/REPO/WORK/LEARN/roadmap/gitOps-argoCD/hello-world'
     path: k8s
     targetRevision: HEAD
   destination:
