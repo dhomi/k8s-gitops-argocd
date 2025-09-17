@@ -1,11 +1,14 @@
-project: default
-source:
-  repoURL: https://github.com/dhomi/k8s-gitops-argocd.git
-  path: techlab
-  targetRevision: HEAD
-destination:
-  server: https://kubernetes.default.svc
-  namespace: argocd
-syncPolicy:
-  automated:
-    enabled: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: techlab-resource
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  source:
+    path: techlab
+    repoURL: https://github.com/dhomi/k8s-gitops-argocd.git
+    targetRevision: HEAD
+  sources: []
+  project: default
