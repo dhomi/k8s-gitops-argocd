@@ -23,4 +23,4 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 ## cluster toevoegen om apps te deployen
 argocd cluster add docker-desktop
 
-16:02
+16:29

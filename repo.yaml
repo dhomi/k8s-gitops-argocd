@@ -1,0 +1,11 @@
+project: default
+source:
+  repoURL: https://github.com/dhomi/k8s-gitops-argocd.git
+  path: .
+  targetRevision: HEAD
+destination:
+  server: https://kubernetes.default.svc
+  namespace: argocd
+syncPolicy:
+  automated:
+    enabled: true
