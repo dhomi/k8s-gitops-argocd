@@ -1,7 +1,7 @@
 project: default
 source:
   repoURL: https://github.com/dhomi/k8s-gitops-argocd.git
-  path: .
+  path: techlab
   targetRevision: HEAD
 destination:
   server: https://kubernetes.default.svc
