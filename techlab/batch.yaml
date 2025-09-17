@@ -9,10 +9,10 @@ spec:
   template:
     spec:
       containers:
-        - name: slack-notification
+        - name: app-techlab-notification
           image: curlimages/curl
           command:
             - curl
-            - http://localhost:8081'
+            - 'http://localhost:8081'
       restartPolicy: Never
   backoffLimit: 2
