@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: app-slack-notification-
+  generateName: app-techlab
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -13,8 +13,6 @@ spec:
           image: curlimages/curl
           command:
             - curl
-            - '-X'
-            - GET
             - http://localhost:8081'
       restartPolicy: Never
   backoffLimit: 2
