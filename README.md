@@ -13,9 +13,9 @@
 - kubectl port-forward svc/argocd-server -n argocd 8080:443
 - ga naar http://localhost:8080 in browser om in te logge als admin met het opgehaalde password
   - je ziet nu de argocd ui en in Applications zie je nog niks. Daarom gaan we een app deployen
-  - app deployen via argocd: kubectl apply -f argocd-app.yaml -n argocd
-  
-in argocd ui zie je nu de app staan, die op zijn beurt de nginx deployment en configmap deployt
+
+In argocd ui zie je nu de app staan, die op zijn beurt de nginx deployment en configmap deployt
+- app deployen via argocd: kubectl apply -f argocd-app.yaml -n argocd
 - hiervan de poort forwarden: ```kubectl port-forward deployment/nginx-deployment 8081:80```
 - check het in de browser: http://localhost:8081 en zie de ngnix-deployment draaien met de html uit de configmap
 
