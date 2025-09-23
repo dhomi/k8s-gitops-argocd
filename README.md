@@ -22,3 +22,8 @@ argocd cluster add docker-desktop
 
 ## HANDMATIG
 in argocd ui, create app met edit yaml van de repo.yaml
+
+## Deployment zien
+kubectl port-forward deployment/nginx-deployment 8081:80
+
+check browser op http://localhost:8081 en zie de deployment draaien
