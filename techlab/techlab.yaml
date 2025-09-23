@@ -14,19 +14,30 @@ data:
     </html>
 
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: nginx-custom
+  name: nginx-deployment
 spec:
-  containers:
-  - name: nginx
-    image: nginx:latest
-    volumeMounts:
-    - name: html-volume
-      mountPath: /usr/share/nginx/html/index.html
-      subPath: index.html
-  volumes:
-  - name: html-volume
-    configMap:
-      name: custom-html
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html-volume
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
+      volumes:
+      - name: html-volume
+        configMap:
+          name: custom-html
