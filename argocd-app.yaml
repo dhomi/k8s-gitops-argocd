@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/dhomi/k8s-gitops-argocd.git'
     # repoURL: 'file:///Users/adhomi/Documents/REPO/WORK/LEARN/roadmap/gitOps-argoCD/hello-world'
-    path: k8s
+    path: techlab
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
