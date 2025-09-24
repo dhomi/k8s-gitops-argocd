@@ -1,3 +1,4 @@
+Author: Beni Dhomi @ QDAT | Date: 2025-09-24 | Version: 3.0 | TechLab: k8s-gitops-argocd | joh3:16
 ![img.png](img.png)
 
 ## Namespace & argoCD
