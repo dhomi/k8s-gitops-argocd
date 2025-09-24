@@ -3,7 +3,7 @@
 - ```kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml```
  
 ## wacht totdat ze running status hebben
-- ```kubectl get po -n argocd -w```
+-wacht tot status van pods is running: ```kubectl get po -n argocd -w```
 - voeg de cluster van argocd aan docker toe: ```argocd cluster add docker-desktop -y```
 ## argocd admin password ophalen om in localhost:8080 te inloggen
 - ```kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo ```
