@@ -21,7 +21,8 @@ Je ziet nu de argoCD UI maar in Applications zie je nog niks. Hiervoor gaan we e
 
 ## GitOps :)
 We gaan nu een change doen in techlab/techlab.yaml en die pushen naar github.
-- Verander de versie in techlab/techlab.yaml (bv van 1.0.0 naar 1.0.1a) en commit + push naar github
+- Verander de versie in techlab/techlab.yaml (bv van 1.0.0 naar 1.0.1a) en de HTML in de configmap
+  - Commit + push naar github
 - Zie dat het in ArgoCD de app is automatisch updated
 - Check de versie in shell: ```kubectl get deployment nginx-deployment -n argocd -o jsonpath="{.spec.template.spec.containers[?(@.name=='nginx')].env[?(@.name=='TAG')].value}"```
 
