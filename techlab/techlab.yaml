@@ -4,7 +4,7 @@ metadata:
   name: custom-html
   namespace: argocd
 data:
-  index.html.template: |
+  index.html: |
     <html>
     <head><title>GitOps - K8s/ArgoCD - TechLab</title></head>
     <body>
