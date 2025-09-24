@@ -16,5 +16,5 @@
 
 In argocd ui zie je nu de app staan, die op zijn beurt de nginx deployment en configmap deployt
 - app deployen via argocd: ```kubectl apply -f argocd-app.yaml -n argocd```
-- hiervan de poort forwarden: ```kubectl port-forward deployment/nginx-deployment 8081:80```
+- hiervan de poort forwarden: ```kubectl port-forward deployment/nginx-deployment  -n argocd 8081:80```
 - check het in de browser: http://localhost:8081 en zie de ngnix-deployment draaien met de html uit de configmap
