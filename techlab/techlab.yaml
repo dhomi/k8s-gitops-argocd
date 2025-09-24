@@ -1,3 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+name: custom-html
+namespace: argocd
+data:
+  index.html.template: |
+    <html>
+    <head><title>GitOps - K8s/ArgoCD - TechLab</title></head>
+    <body>
+      <h1>Hartelijke groet'n van Techlab in Kubernetes!</h1>
+      <p>HTML komt uit de ConfigMap.</p>
+      <p>Versie: {{VERSION}}</p>
+      <p>tag:24-09 10:22</p>
+    </body>
+    </html>
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,28 +31,28 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: html-volume
-          mountPath: /usr/share/nginx/html
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
       initContainers:
-      - name: init-html
-        image: busybox
-        env:
-        - name: VERSION
-          value: "1.0.0"  # Hier kun je eventueel via env komen of uit ConfigMap
-        volumeMounts:
-        - name: html-volume
-          mountPath: /usr/share/nginx/html
-        command:
-        - /bin/sh
-        - -c
-        - |
-          cat /usr/share/nginx/html/index.html.template | sed "s/{{VERSION}}/$VERSION/g" > /usr/share/nginx/html/index.html
+        - name: init-html
+          image: busybox
+          env:
+            - name: VERSION
+              value: "1.0.0" # Hier kun je eventueel via env komen of uit ConfigMap
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
+          command:
+            - /bin/sh
+            - -c
+            - |
+              cat /usr/share/nginx/html/index.html.template | sed "s/{{VERSION}}/$VERSION/g" > /usr/share/nginx/html/index.html
       volumes:
-      - name: html-volume
-        configMap:
-          name: custom-html
+        - name: html-volume
+          configMap:
+            name: custom-html
