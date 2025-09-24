@@ -10,8 +10,6 @@ data:
     <body>
       <h1>Hartelijke groet'n van Techlab in Kubernetes!</h1>
       <p>HTML komt uit de ConfigMap.</p>
-      <p>Versie: {{VERSION}}</p>
-      <p>tag: {{TAG}}</p>
     </body>
     </html>
 
