@@ -38,6 +38,9 @@ spec:
       containers:
         - name: nginx
           image: nginx:latest
+          env:
+            - name: VERSION
+              value: "1.0.0"  # vervang dit met je eigen versie
           ports:
             - containerPort: 80
           volumeMounts:
