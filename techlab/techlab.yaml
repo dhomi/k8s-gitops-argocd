@@ -11,7 +11,7 @@ data:
       <h1>Hartelijke groet'n van Techlab in Kubernetes!</h1>
       <p>HTML komt uit de ConfigMap.</p>
       <p>Versie: {{VERSION}}</p>
-      <p>tag:24-09 11:38</p>
+      <p>tag: {{TAG}}</p>
     </body>
     </html>
 
@@ -42,6 +42,8 @@ spec:
           env:
             - name: VERSION
               value: "1.0.0" # vervang dit met je eigen versie
+            - name: TAG
+              value: "24-09 11:38"
           ports:
             - containerPort: 80
           volumeMounts:
