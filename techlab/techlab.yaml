@@ -39,9 +39,9 @@ spec:
           image: nginx:latest
           env:
             - name: VERSION
-              value: "1.0.4a" # vervang dit met je eigen versie
+              value: "versie 3-10" # vervang dit met je eigen versie
             - name: TAG
-              value: "techlab-04a"
+              value: "techlab-3-10"
           ports:
             - containerPort: 80
           volumeMounts:
