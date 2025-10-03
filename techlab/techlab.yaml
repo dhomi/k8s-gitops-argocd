@@ -11,10 +11,8 @@ data:
   <title>GitOps - K8s/ArgoCD - TechLab - Beni Dhomi</title>
   </head>
     <body>
-      <div class="box">
-        <h1>Hartelijke groet'n van Techlab in Kubernetes!</h1>
-        <p>HTML komt uit de ConfigMap. - versie: 4a</p>
-      </div>
+      <h1>Hartelijke groet'n van Techlab in Kubernetes!</h1>
+      <p>HTML komt uit de ConfigMap. - versie: 4a</p>
     </body>
   </html>
 
