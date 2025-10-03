@@ -5,16 +5,13 @@ metadata:
   namespace: argocd
 data:
   index.html: |
-  <html>
-  <head>
-  <meta charset="UTF-8" />
-  <title>GitOps - K8s/ArgoCD - TechLab - Beni Dhomi</title>
-  </head>
+    <html>
+    <head><title>GitOps - K8s/ArgoCD - TechLab</title></head>
     <body>
       <h1>Hartelijke groet'n van Techlab in Kubernetes!</h1>
-      <p>HTML komt uit de ConfigMap. - versie: 4a</p>
+      <p>HTML komt uit de ConfigMap. - 4a </p>
     </body>
-  </html>
+    </html>
 
 ---
 apiVersion: apps/v1
